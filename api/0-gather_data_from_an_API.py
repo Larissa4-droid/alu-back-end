@@ -19,8 +19,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Define the API URLs
-    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
+    base_url = "https://jsonplaceholder.typicode.com"
+    user_url = f"{base_url}/users/{employee_id}"
+    todos_url = f"{base_url}/todos?userId={employee_id}"
 
     # Fetch user data
     user_response = requests.get(user_url)
