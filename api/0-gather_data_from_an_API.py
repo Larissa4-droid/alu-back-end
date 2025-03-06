@@ -37,12 +37,12 @@ if __name__ == "__main__":
     todos_data = todos_response.json()
 
     # Filter completed tasks
-    completed_tasks = [task["title"] for task in todos_data if task["completed"]]
+    completed_tasks = [t["title"] for t in todos_data if t["completed"]]
     total_tasks = len(todos_data)
     done_tasks = len(completed_tasks)
 
     # Print the result in the required format
-    print(f"Employee {employee_name} is done with tasks({done_tasks}/{total_tasks}):")
+    print(f"Employee {employee_name} is done with tasks"
+          f"({done_tasks}/{total_tasks}):")
     for task in completed_tasks:
         print(f"\t {task}")
-
